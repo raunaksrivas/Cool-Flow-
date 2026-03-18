@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-hvac-blue-900: #0c2461;
+  --color-hvac-blue-800: #1e3799;
+  --color-hvac-blue-600: #4a69bd;
+  --color-hvac-orange-500: #f39c12;
+  --color-hvac-orange-600: #e67e22;
+  --color-hvac-yellow-400: #f1c40f;
+  --color-hvac-red-600: #e55039;
+  --color-hvac-ice: #f1f2f6;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 bg-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.gradient-cool {
+  background: linear-gradient(135deg, #0c2461 0%, #4a69bd 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, #e67e22 0%, #e55039 100%);
+}
+
+.gradient-flow {
+  background: linear-gradient(90deg, #4a69bd 0%, #f39c12 100%);
+}
