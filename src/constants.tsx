@@ -1,4 +1,5 @@
-import { Snowflake, Flame, Shield, Clock, Phone, MapPin, Mail, Star, CheckCircle2, ArrowRight, Menu, X, Facebook, Twitter, Instagram, Linkedin, Tool, Zap, Thermometer } from 'lucide-react';
+import React from 'react';
+import { Snowflake, Flame, Shield, Clock, Phone, MapPin, Mail, Star, CheckCircle2, ArrowRight, Menu, X, Facebook, Twitter, Instagram, Linkedin, Zap, Thermometer } from 'lucide-react';
 
 export interface Service {
   id: string;

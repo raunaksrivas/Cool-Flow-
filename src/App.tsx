@@ -74,12 +74,6 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
                 {link.name}
               </button>
             ))}
-            <button 
-              onClick={() => setActivePage('contact')}
-              className="bg-hvac-blue-900 hover:bg-hvac-blue-800 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg"
-            >
-              Book Now
-            </button>
           </div>
 
           {/* Mobile Toggle */}
@@ -118,17 +112,6 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
                   {link.name}
                 </button>
               ))}
-              <div className="pt-4">
-                <button 
-                  onClick={() => {
-                    setActivePage('contact');
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="w-full bg-hvac-blue-900 text-white py-4 rounded-xl font-bold flex items-center justify-center"
-                >
-                  <Phone className="mr-2 w-5 h-5" /> Call (800) COOL-FLOW
-                </button>
-              </div>
             </div>
           </motion.div>
         )}
@@ -206,10 +189,6 @@ const Footer = ({ setActivePage }: { setActivePage: (page: string) => void }) =>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-hvac-orange-500 mr-3 mt-1 shrink-0" />
                 <span className="text-slate-300">123 Comfort Lane, Suite 100<br />Dallas, TX 75201</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 text-hvac-orange-500 mr-3 shrink-0" />
-                <span className="text-slate-300">(800) COOL-FLOW</span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 text-hvac-orange-500 mr-3 shrink-0" />
@@ -355,16 +334,10 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <button 
-                onClick={() => setActivePage('contact')}
+                onClick={() => setActivePage('services')}
                 className="bg-hvac-orange-500 hover:bg-hvac-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center transition-all shadow-xl hover:shadow-hvac-orange-500/20"
               >
-                Book Service Now <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button 
-                onClick={() => setActivePage('services')}
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center transition-all"
-              >
-                View Our Services
+                View Our Services <ArrowRight className="ml-2 w-5 h-5" />
               </button>
             </div>
 
@@ -557,20 +530,14 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
             <div className="relative z-10 max-w-3xl mx-auto">
               <h3 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-8">Ready to Restore Your Comfort?</h3>
               <p className="text-xl text-hvac-ice/80 mb-10">
-                Join thousands of happy homeowners who trust CoolFlow for their HVAC needs. Get a free estimate or book your service online today.
+                Join thousands of happy homeowners who trust CoolFlow for their HVAC needs. Explore our services and find the perfect solution for your home.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <div className="flex justify-center">
                 <button 
-                  onClick={() => setActivePage('contact')}
+                  onClick={() => setActivePage('services')}
                   className="bg-hvac-orange-500 hover:bg-hvac-orange-600 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all shadow-xl"
                 >
-                  Book Service Now
-                </button>
-                <button 
-                  onClick={() => window.location.href = 'tel:8002665356'}
-                  className="bg-white text-hvac-blue-900 hover:bg-slate-100 px-10 py-5 rounded-2xl font-bold text-xl transition-all flex items-center justify-center"
-                >
-                  <Phone className="mr-2 w-6 h-6" /> (800) COOL-FLOW
+                  View Our Services
                 </button>
               </div>
             </div>
@@ -611,12 +578,6 @@ const ServicesPage = ({ setActivePage }: { setActivePage: (page: string) => void
                     </div>
                   ))}
                 </div>
-                <button 
-                  onClick={() => setActivePage('contact')}
-                  className="bg-hvac-blue-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-hvac-blue-800 transition-all shadow-lg"
-                >
-                  Request {service.title}
-                </button>
               </div>
               <div className="flex-1">
                 <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video lg:aspect-square">
@@ -734,9 +695,6 @@ const PlansPage = () => {
                   </li>
                 ))}
               </ul>
-              <button className={`w-full py-4 rounded-xl font-bold transition-all ${plan.recommended ? 'bg-hvac-orange-500 text-white hover:bg-hvac-orange-600 shadow-lg' : 'bg-hvac-blue-900 text-white hover:bg-hvac-blue-800'}`}>
-                Choose {plan.name}
-              </button>
             </div>
           ))}
         </div>
@@ -786,20 +744,10 @@ const ContactPage = () => {
           <div>
             <h1 className="text-5xl md:text-6xl font-display font-extrabold text-hvac-blue-900 mb-8">Get in Touch</h1>
             <p className="text-xl text-slate-600 mb-12">
-              Ready to schedule a service or have a question? Fill out the form below or give us a call. Our team is standing by 24/7.
+              Have a question or need more information? Reach out to us via email or visit our office. Our team is here to help.
             </p>
 
             <div className="space-y-8 mb-12">
-              <div className="flex items-center p-6 bg-slate-50 rounded-3xl border border-slate-100">
-                <div className="bg-hvac-blue-900 p-4 rounded-2xl mr-6">
-                  <Phone className="text-white w-8 h-8" />
-                </div>
-                <div>
-                  <p className="text-slate-500 font-bold uppercase text-xs tracking-widest mb-1">Call Us 24/7</p>
-                  <p className="text-2xl font-extrabold text-hvac-blue-900">(800) COOL-FLOW</p>
-                </div>
-              </div>
-
               <div className="flex items-center p-6 bg-slate-50 rounded-3xl border border-slate-100">
                 <div className="bg-hvac-orange-500 p-4 rounded-2xl mr-6">
                   <Mail className="text-white w-8 h-8" />
@@ -820,98 +768,22 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-
-            <div className="bg-hvac-red-600 text-white p-8 rounded-3xl shadow-xl flex items-center">
-              <Clock className="w-12 h-12 mr-6 animate-pulse" />
-              <div>
-                <h4 className="text-xl font-bold mb-1">Emergency Service?</h4>
-                <p className="text-white/80">Call our 24/7 emergency line for immediate dispatch. We're always available.</p>
-              </div>
-            </div>
           </div>
 
-          <div className="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl border border-slate-100">
-            <h3 className="text-3xl font-display font-extrabold text-hvac-blue-900 mb-8">Book Your Service</h3>
-            
-            {submitted ? (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-emerald-50 border border-emerald-100 p-8 rounded-3xl text-center"
-              >
-                <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white">
-                  <CheckCircle2 size={40} />
-                </div>
-                <h4 className="text-2xl font-bold text-emerald-900 mb-4">Request Received!</h4>
-                <p className="text-emerald-700">Thank you for choosing CoolFlow. One of our specialists will contact you within 15 minutes to confirm your booking.</p>
-              </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-                    <div className="relative">
-                      <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                      <input 
-                        required
-                        type="text" 
-                        placeholder="John Doe"
-                        className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-hvac-blue-600 focus:border-transparent outline-none transition-all"
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
-                    <div className="relative">
-                      <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                      <input 
-                        required
-                        type="tel" 
-                        placeholder="(555) 000-0000"
-                        className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-hvac-blue-600 focus:border-transparent outline-none transition-all"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2">Service Type</label>
-                  <select 
-                    className="w-full px-4 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-hvac-blue-600 focus:border-transparent outline-none transition-all appearance-none"
-                    value={formData.service}
-                    onChange={(e) => setFormData({...formData, service: e.target.value})}
-                  >
-                    {SERVICES.map(s => <option key={s.id} value={s.title}>{s.title}</option>)}
-                    <option value="Other">Other / General Inquiry</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2">How can we help?</label>
-                  <div className="relative">
-                    <MessageSquare className="absolute left-4 top-4 text-slate-400 w-5 h-5" />
-                    <textarea 
-                      rows={4}
-                      placeholder="Tell us about your HVAC issue..."
-                      className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-hvac-blue-600 focus:border-transparent outline-none transition-all"
-                      value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    ></textarea>
-                  </div>
-                </div>
-
-                <button 
-                  type="submit"
-                  className="w-full bg-hvac-orange-500 hover:bg-hvac-orange-600 text-white py-5 rounded-xl font-bold text-xl transition-all shadow-xl hover:shadow-hvac-orange-500/20"
-                >
-                  Send Booking Request
-                </button>
-              </form>
-            )}
+          <div className="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl border border-slate-100 flex flex-col items-center justify-center text-center">
+            <div className="w-20 h-20 bg-hvac-blue-900 rounded-full flex items-center justify-center mb-6 text-white">
+              <MessageSquare size={40} />
+            </div>
+            <h3 className="text-3xl font-display font-extrabold text-hvac-blue-900 mb-4">Contact Us</h3>
+            <p className="text-slate-600 mb-8">
+              We're currently updating our online booking system. Please reach out to us via email for any inquiries.
+            </p>
+            <a 
+              href="mailto:service@coolflow.com"
+              className="bg-hvac-orange-500 hover:bg-hvac-orange-600 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-xl"
+            >
+              Email Our Team
+            </a>
           </div>
         </div>
 
@@ -960,28 +832,6 @@ export default function App() {
       </main>
 
       <Footer setActivePage={setActivePage} />
-
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-8 right-8 z-40 flex flex-col space-y-4">
-        <motion.button 
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => window.location.href = 'tel:8002665356'}
-          className="bg-hvac-blue-900 text-white p-4 rounded-full shadow-2xl flex items-center group"
-        >
-          <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap font-bold px-0 group-hover:px-4">Call Now</span>
-          <Phone size={24} />
-        </motion.button>
-        <motion.button 
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setActivePage('contact')}
-          className="bg-hvac-orange-500 text-white p-4 rounded-full shadow-2xl flex items-center group"
-        >
-          <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap font-bold px-0 group-hover:px-4">Book Service</span>
-          <ArrowRight size={24} />
-        </motion.button>
-      </div>
     </div>
   );
 }
